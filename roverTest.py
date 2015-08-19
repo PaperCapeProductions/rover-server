@@ -100,6 +100,16 @@ def pivotLeft():
         frontRF.start(speed)
         backRF.start(speed)
         backLB.start(speed)
+    if state == "forward":
+        frontLF.ChangeDutyCycle(speed * 0.25)
+        backLF.ChangeDutyCycle(speed * 0.25)
+        backRF.ChangeDutyCycle(speed * 1.25)
+        frontRF.ChangeDutyCycle(speed * 1.25)
+    if state == "backward":
+        frontLB.ChangeDutyCycle(speed * 0.25)
+        backLB.ChangeDutyCycle(speed * 0.25)
+        backRB.ChangeDutyCycle(speed * 1.25)
+        frontRB.ChangeDutyCycle(speed * 1.25)
     state = "left"
 
 def pivotRight():
@@ -109,6 +119,16 @@ def pivotRight():
         frontRB.start(speed)
         backRB.start(speed)
         backLF.start(speed)
+    if state == "forward":
+        frontRF.ChangeDutyCycle(speed * 0.25)
+        backRF.ChangeDutyCycle(speed * 0.25)
+        backLF.ChangeDutyCycle(speed * 1.25)
+        frontLF.ChangeDutyCycle(speed * 1.25)
+    if state == "backward":
+        frontRB.ChangeDutyCycle(speed * 0.25)
+        backRB.ChangeDutyCycle(speed * 0.25)
+        backLB.ChangeDutyCycle(speed * 1.25)
+        frontLB.ChangeDutyCycle(speed * 1.25)
     state = "right"
 
 def ping():
